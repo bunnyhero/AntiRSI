@@ -37,7 +37,7 @@
 		4DF73F66061E136200B0D9C9 /* AntiRSIView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AntiRSIView.h; sourceTree = "<group>"; };
 		4DF73F85061E155C00B0D9C9 /* AntiRSI.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AntiRSI.icns; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* AntiRSI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntiRSI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* AntiRSI 64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AntiRSI 64.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA827B10FE0D04B009F8249 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* AntiRSI.app */,
+				8D1107320486CEB800E47090 /* AntiRSI 64.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			name = "AntiRSI 64";
 			productInstallPath = "$(HOME)/Applications";
 			productName = AntiRSI;
-			productReference = 8D1107320486CEB800E47090 /* AntiRSI.app */;
+			productReference = 8D1107320486CEB800E47090 /* AntiRSI 64.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bunnyherolabs.antirsi;
-				PRODUCT_NAME = AntiRSI;
+				PRODUCT_NAME = "AntiRSI 64";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -302,7 +302,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bunnyherolabs.antirsi;
-				PRODUCT_NAME = AntiRSI;
+				PRODUCT_NAME = "AntiRSI 64";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -335,7 +335,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bunnyherolabs.antirsi;
-				PRODUCT_NAME = AntiRSI;
+				PRODUCT_NAME = "AntiRSI 64";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
