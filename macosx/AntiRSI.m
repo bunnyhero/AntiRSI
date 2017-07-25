@@ -335,9 +335,15 @@ static void handle_status_update(void * data) {
 
 // done with micro pause or work break
 - (void)endBreak {
-//    [[main_window animator] setAlphaValue:0.0];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:1.0];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [main_window orderOut:NULL];
+    }];
+    [[main_window animator] setAlphaValue:0.0];
+    [NSAnimationContext endGrouping];
     // what is the consequence of hiding it, instead of ordering it out??
-    [main_window orderOut:NULL];
+//    [main_window orderOut:NULL];
 
     // reset time interval to user's choice
     [self installTimer:sample_interval];
@@ -348,8 +354,11 @@ static void handle_status_update(void * data) {
     [main_window center];
     [main_window orderFrontRegardless];
     [main_window setAlphaValue:0.0];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:1.0];
     [[main_window animator] setAlphaValue:1.0];
-
+    [NSAnimationContext endGrouping];
+    
     // temporarily set time interval for smooth updating during the pause
     [self installTimer:0.1];
 }
