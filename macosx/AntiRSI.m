@@ -214,8 +214,38 @@ static void handle_status_update(void * data) {
 - (void)tick:(NSTimer *)timer {
 
     // still even iTunes posts HID events to prevent screen blanks and screen saver ... ugly
-    CFTimeInterval idle_time = CGEventSourceSecondsSinceLastEventType(kCGEventSourceStateHIDSystemState, kCGAnyInputEventType);
-    ai_tick(core, idle_time);
+    // get all idle times EXCEPT motion sensor. since we can't mask, we'll have to test each event type
+    // separately and use the minimum
+    CFTimeInterval min_idle_time = DBL_MAX;
+    CGEventType event_types[] = {
+        /* Mouse events. */
+        kCGEventLeftMouseDown,
+        kCGEventLeftMouseUp,
+        kCGEventRightMouseDown,
+        kCGEventRightMouseUp,
+        kCGEventMouseMoved,
+        kCGEventLeftMouseDragged,
+        kCGEventRightMouseDragged,
+        
+        /* Keyboard events. */
+        kCGEventKeyDown,
+        kCGEventKeyUp,
+        kCGEventFlagsChanged,
+        
+        /* Specialized control devices. */
+        kCGEventScrollWheel,
+        kCGEventTabletPointer,
+        kCGEventTabletProximity,
+        kCGEventOtherMouseDown,
+        kCGEventOtherMouseUp,
+        kCGEventOtherMouseDragged,
+    };
+    for (int i = 0; i < sizeof(event_types) / sizeof(event_types[0]); i ++) {
+        CFTimeInterval idle_time = CGEventSourceSecondsSinceLastEventType(kCGEventSourceStateHIDSystemState, event_types[i]);
+        if (idle_time < min_idle_time)
+            min_idle_time = idle_time;
+    }
+    ai_tick(core, min_idle_time);
 }
 
 // draw the break window progress bar and such
