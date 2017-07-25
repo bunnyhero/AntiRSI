@@ -94,7 +94,7 @@ static void handle_status_update(void * data) {
     background=[c retain];
 
     // make new darkbackground color
-    float r,g,b,a;
+    CGFloat r,g,b,a;
     [background getRed:&r green:&g blue:&b alpha:&a];
     [darkbackground autorelease];
     darkbackground=[[NSColor colorWithCalibratedRed:r*0.35 green:g*0.35 blue:b*0.35 alpha:a+0.2] retain];
