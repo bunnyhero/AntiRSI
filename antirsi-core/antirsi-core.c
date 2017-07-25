@@ -78,6 +78,14 @@ ai_work_break_now(ai_core *c)
   if (c->emit_work_break_start) c->emit_work_break_start(c->user_data);
 }
 
+void
+ai_micro_pause_now(ai_core *c)
+{
+  c->state = S_IN_MINI;
+
+  if (c->emit_mini_break_start) c->emit_mini_break_start(c->user_data);
+}
+
 int
 ai_can_continue_natural_break(ai_core *c)
 {

@@ -477,6 +477,12 @@
                                     <action selector="breakNow:" target="252" id="339"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Micro Pause Now" id="VRG-AM-CNg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="microPauseNow:" target="252" id="YKG-gV-YN8"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Postpone Break" keyEquivalent="p" id="340">
                                 <connections>
                                     <action selector="postpone:" target="252" id="341"/>
@@ -527,6 +533,7 @@
                 <outlet property="dockPostpone" destination="347" id="495"/>
                 <outlet property="label" destination="491" id="493"/>
                 <outlet property="menuBreakNow" destination="337" id="496"/>
+                <outlet property="menuMicroPauseNow" destination="VRG-AM-CNg" id="vRW-po-sfY"/>
                 <outlet property="menuPostpone" destination="340" id="497"/>
                 <outlet property="next_break" destination="370" id="371"/>
                 <outlet property="postpone" destination="261" id="273"/>

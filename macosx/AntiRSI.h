@@ -29,6 +29,7 @@
     IBOutlet NSMenuItem *menuBreakNow;
     IBOutlet NSMenuItem *dockBreakNow;
     IBOutlet NSMenuItem *menuPostpone;
+    IBOutlet NSMenuItem *menuMicroPauseNow;
     IBOutlet NSMenuItem *dockPostpone;
 
     // dock icon image

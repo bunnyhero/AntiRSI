@@ -93,6 +93,8 @@ double ai_break_progress(ai_core * c);
 void ai_work_break_postpone(ai_core *c);
 /** will initiate a work break right now */
 void ai_work_break_now(ai_core *c);
+/** will initiate a micro pause right now */
+void ai_micro_pause_now(ai_core *c);
 
 // natural break continuation
 /** 1 if a natural work break continuation is available, 0 otherwise */

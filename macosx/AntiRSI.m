@@ -445,6 +445,9 @@ static void handle_status_update(void * data) {
 - (IBAction)breakNow:(id)sender {
     ai_work_break_now(core);
 }
+- (IBAction)microPauseNow:(id)sender {
+    ai_micro_pause_now(core);
+}
 
 // validate menu items
 - (BOOL)validateMenuItem:(NSMenuItem *)menu {
@@ -462,6 +465,9 @@ static void handle_status_update(void * data) {
         return core->state == S_IN_WORK;
     }
 
+    if (menu == menuMicroPauseNow) {
+        return core->state == S_NORMAL;
+    }
     return [super validateMenuItem:menu];
 }
 
