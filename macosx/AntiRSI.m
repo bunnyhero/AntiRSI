@@ -161,7 +161,9 @@ static void handle_status_update(void * data) {
     [main_window setMovableByWindowBackground:YES];
     [main_window center];
     [main_window setContentView:view];
-    [main_window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
+    [main_window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces |
+                                       NSWindowCollectionBehaviorStationary |
+                                       NSWindowCollectionBehaviorFullScreenAuxiliary];
 
     // set background now
     [self setBackground:background];
