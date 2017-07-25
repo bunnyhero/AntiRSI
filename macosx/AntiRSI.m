@@ -401,30 +401,30 @@ static void handle_status_update(void * data) {
 // check for update
 - (IBAction)checkForUpdate:(id)sender
 {
-    NSString *latest_version = [NSString stringWithContentsOfURL: [NSURL URLWithString:sLatestVersionURL]];
-    if (latest_version == Nil) latest_version = @"";
-    
-    latest_version = [latest_version stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    if ([latest_version length] == 0) {
-        NSRunInformationalAlertPanel(
-            @"Unable to Determine",
-            @"Unable to determine the latest AntiRSI version number.",
-            @"Ok", nil, nil);
-    } else if ([latest_version compare:sVersion] == NSOrderedDescending) {
-        int r = NSRunInformationalAlertPanel(
-            @"New Version",
-            [NSString stringWithFormat:@"A new version (%@) of AntiRSI is available; would you like to go to the website now?", latest_version],
-            @"Goto Website", @"Cancel", nil);
-        if (r == NSOKButton) {
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:sURL]];
-        }
-    } else {
+//    NSString *latest_version = [NSString stringWithContentsOfURL:[NSURL URLWithString:sLatestVersionURL] encoding:NSASCIIStringEncoding error:NULL];
+//    if (latest_version == Nil) latest_version = @"";
+//    
+//    latest_version = [latest_version stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//
+//    if ([latest_version length] == 0) {
+//        NSRunInformationalAlertPanel(
+//            @"Unable to Determine",
+//            @"Unable to determine the latest AntiRSI version number.",
+//            @"Ok", nil, nil);
+//    } else if ([latest_version compare:sVersion] == NSOrderedDescending) {
+//        int r = NSRunInformationalAlertPanel(
+//            @"New Version",
+//            [NSString stringWithFormat:@"A new version (%@) of AntiRSI is available; would you like to go to the website now?", latest_version],
+//            @"Goto Website", @"Cancel", nil);
+//        if (r == NSOKButton) {
+//            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:sURL]];
+//        }
+//    } else {
         NSRunInformationalAlertPanel(
             @"No Update Available",
             @"This is the latest version of AntiRSI.",
             @"OK", nil, nil);
-    }
+//    }
 }
 
 // stop work break and postpone by 10 minutes
