@@ -335,9 +335,9 @@ static void handle_status_update(void * data) {
 
 // done with micro pause or work break
 - (void)endBreak {
-    [[main_window animator] setAlphaValue:0.0];
+//    [[main_window animator] setAlphaValue:0.0];
     // what is the consequence of hiding it, instead of ordering it out??
-    //[main_window orderOut:NULL];
+    [main_window orderOut:NULL];
 
     // reset time interval to user's choice
     [self installTimer:sample_interval];
